@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>История Цензуры в России</h1>
+            <div class="header-images">
+                <img src="images/image 1.png" alt="">
+                <img src="images/image 2.png" alt="">
+                <img src="images/image 3.png" alt="">
+                <img src="images/image 4.png" alt="">
+            </div>
+        </div> 
+    </header>
+
+    <button class="mobile-menu-toggle">☰</button>
+
+    <main class="main-container">
+        <nav class="sidebar-nav">
+            <button><a href="index.html">Главная</a></button>
+            <button><a href="history.html">История</a></button>
+            <button><a href="putin.html">Цензура при Путине</a></button>
+            <button><a href="articles.html">Статьи</a></button>
+        </nav>
+        
+        <div class="content">
+            <section class="text-content">
+                <h2>История развития цензуры в России</h2>
+                <p>Цензура в России имеет долгую и сложную историю, неразрывно связанную с эволюцией самого государства. Она трансформировалась из инструмента религиозного контроля в мощную систему управления обществом, принимая разные формы в зависимости от эпохи, но всегда сохраняя свою суть — фильтрацию информации, допустимой для распространения.</p>
+                
+                <div class="video-container">
+                    <h3>Документальный фильм о цензуре</h3>
+                    <video id="history-video" width="100%" controls>
+                        <source src="video/ModelAnimation0001-0500.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео элемент.
+                    </video>
+                    <div id="video-controls" class="video-controls">
+                    </div>
+                </div>
+                
+                <div class="numbered-section">
+                    <h3>I. Истоки: Цензура в Императорской России</h3>
+                    <p>Зарождение цензуры в России было связано с появлением книгопечатания и необходимостью контроля над инакомыслием.</p>
+                    <ol class="numbered-list">
+                        <li><strong>XVI-XVII века: Религиозная цензура.</strong> Первые цензурные меры имели религиозный характер. В 1550-х годах при Иване Грозном была создана первая типография, а в 1564-м вышла первая датированная русская печатная книга «Апостол». Контроль осуществлялся духовенством.</li>
+                        <li><strong>Эпоха Петра I: Светский контроль.</strong> Петр Великий, понимая силу печатного слова, подчинил его государственным интересам. В 1720 году был издан указ, обязывающий перед публикацией проверять рукописи на предмет отсутствия критики в адрес власти.</li>
+                        <li><strong>XIX век: Создание бюрократической системы.</strong> При Александре I в 1804 году был принят первый цензурный устав — единый свод правил. Однако настоящий расцвет репрессивной цензуры связан с именем Николая I.</li>
+                    </ol>
+                </div>
+
+                <div class="numbered-section">
+                    <h3>II. Советский период: Тотальная идеологическая цензура</h3>
+                    <p>С приходом к власти большевиков цензура приобрела тотальный, всепроникающий характер и стала краеугольным камнем государственной идеологии.</p>
+                    <ol class="numbered-list">
+                        <li><strong>Становление системы (1917-1920-е).</strong> Уже в ноябре 1917 года вышел декрет «О печати», закрывавший все «контрреволюционные» издания. В 1922 году была создана Главлит — централизованный орган государственной цензуры.</li>
+                        <li><strong>Эпоха сталинского террора (1930-1950-е).</strong> Цензура достигла своего апогея. Контролировалось всё: от газет и книг до радио, музыки и науки.</li>
+                    </ol>
+                </div>
+
+                <div class="numbered-section">
+                    <h3>III. Постсоветский период: От либерализации к новому контролю</h3>
+                    <p>Распад СССР в 1991 году привел к формальной отмене цензуры. Статья 29 Конституции РФ гарантирует свободу слова и запрещает цензуру.</p>
+                    <ol class="numbered-list">
+                        <li><strong>1990-е: Хаос и олигархизация.</strong> Исчезла государственная идеологическая цензура, но появились новые ограничители — интересы владельцев медиахолдингов.</li>
+                        <li><strong>2000-е: Восстановление государственного контроля.</strong> С приходом к власти Владимира Путина начался процесс постепенного возвращения контроля над информационным пространством.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Контакты</h3>
+        <div class="social-links">
+            <a href=""><img src="images/image 10.png" alt=""></a>
+            <a href=""><img src="images/image 9.png" alt=""></a>
+        </div>
+        
+        <button id="show-contact-form" style="margin: 10px; padding: 8px 15px; cursor: pointer;">
+            Оставить отзыв
+        </button>
+        <div id="contact-form-container" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+            <form id="contact-form">
+                <input type="text" id="user-name" placeholder="Ваше имя">
+                <input type="email" id="user-email" placeholder="Ваш email">
+                <textarea id="user-feedback" placeholder="Ваш отзыв"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+            <div id="success-message" style="display: none; color: green; font-weight: bold;">
+                Спасибо! Ваш отзыв сохранён.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

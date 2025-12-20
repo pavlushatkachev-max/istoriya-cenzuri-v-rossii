@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цензура при Путине</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>История Цензуры в России</h1>
+            <div class="header-images">
+                <img src="images/image 1.png" alt="">
+                <img src="images/image 2.png" alt="">
+                <img src="images/image 3.png" alt="">
+                <img src="images/image 4.png" alt="">
+            </div>
+        </div> 
+    </header>
+
+    <button class="mobile-menu-toggle">☰</button>
+
+    <main class="main-container">
+        <nav class="sidebar-nav">
+            <button><a href="index.html">Главная</a></button>
+            <button><a href="history.html">История</a></button>
+            <button><a href="putin.html">Цензура при Путине</a></button>
+            <button><a href="articles.html">Статьи</a></button>
+        </nav>
+        
+        <div class="content">
+            <section class="text-content">
+                <h2>Цензура в России при Путине (с 2000 года по настоящее время)</h2>
+                <p>Период руководства Владимира Путина стал временем кардинальной трансформации российского медиапространства. Если в 2000-е годы речь шла о «управляемой демократии» и «управляемых свободах», то к 2020-м годам система контроля над информацией эволюционировала в сторону цифрового авторитаризма, где цензура стала не просто инструментом, а основой государственной информационной политики.</p>
+                
+                <div class="numbered-section">
+                    <h3>Фаза 1: Становление системы (2000-2008) – Установление вертикали контроля</h3>
+                    <p>Приход Владимира Путина к власти совпал с ослаблением государства после хаотичных 1990-х. Его задачей стало восстановление «вертикали власти», и СМИ оказались ключевым элементом этой конструкции.</p>
+                    <ol class="numbered-list">
+                        <li><strong>Установление контроля над федеральными телеканалами.</strong> Ключевым шагом стало взятие под государственный контроль или смена руководства на главных телеканалах — Первом, НТВ и РТР.</li>
+                        <li><strong>Ликвидация олигархов как политической силы.</strong> Дело Михаила Ходорковского и разгром ЮКОСа показали, что бизнес не может использовать свои медиаресурсы для политического влияния.</li>
+                    </ol>
+                </div>
+
+                <div class="numbered-section">
+                    <h3>Фаза 2: Легализация и бюрократизация (2008-2018) – Создание правового каркаса</h3>
+                    <p>После протестов 2011-2012 годов, которые были в значительной степени организованы через интернет, власть осознала уязвимость своей монополии на информацию и перешла к созданию юридической базы для контроля.</p>
+                    <ol class="numbered-list">
+                        <li><strong>Закон об «иностранных агентах» (2012).</strong> Изначально направленный против НКО, закон стал главным инструментом стигматизации и давления.</li>
+                        <li><strong>Ужесточение законодательства об экстремизме.</strong> Статьи 280 и 282 УК РФ стали массово применяться против оппозиционных активистов, журналистов и обычных пользователей соцсетей.</li>
+                    </ol>
+                </div>
+
+                <div class="audio-container" style="margin: 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
+                    <h3>Аудиодокумент: Обсуждение цензуры в СМИ</h3>
+                    <audio id="censorship-audio" controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Ваш браузер не поддерживает аудио элемент.
+                    </audio>
+                    <div id="audio-controls" style="margin-top: 10px;">
+                    </div>
+                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">
+                        <em>Пример аудиоматериала по теме цензуры в российских медиа</em>
+                    </p>
+                </div>
+
+                <div class="numbered-section">
+                    <h3>Фаза 3: Цифровой суверенитет и тотальная цензура (2018 – настоящее время)</h3>
+                    <p>Этот этап характеризуется переходом к тотальному контролю над цифровым пространством и окончательным уничтожением остатков независимой журналистики.</p>
+                    <ol class="numbered-list">
+                        <li><strong>«Суверенный интернет» (2019).</strong> Закон технически позволяет отключить Россию от глобальной сети и создает инфраструктуру для глубокого контроля всего интернет-трафика.</li>
+                        <li><strong>Законы о «фейковых новостях» и «неуважении к власти» (2019, 2022).</strong> Эти нормы криминализируют распространение любых сведений, не совпадающих с официальной позицией государства.</li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Контакты</h3>
+        <div class="social-links">
+            <a href=""><img src="images/image 10.png" alt=""></a>
+            <a href=""><img src="images/image 9.png" alt=""></a>
+        </div>
+        
+        <button id="show-contact-form" style="margin: 10px; padding: 8px 15px; cursor: pointer;">
+            Оставить отзыв
+        </button>
+        <div id="contact-form-container" style="display: none; margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+            <form id="contact-form">
+                <input type="text" id="user-name" placeholder="Ваше имя">
+                <input type="email" id="user-email" placeholder="Ваш email">
+                <textarea id="user-feedback" placeholder="Ваш отзыв"></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+            <div id="success-message" style="display: none; color: green; font-weight: bold;">
+                Спасибо! Ваш отзыв сохранён.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
