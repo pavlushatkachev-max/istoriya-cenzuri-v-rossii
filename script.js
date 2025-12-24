@@ -41,66 +41,71 @@ document.addEventListener('DOMContentLoaded', function() {
         footer.insertBefore(timeButton, footer.firstChild);
     }
     
-    // ============ ЗАДАНИЕ 3 ============
-   const contactForm = document.getElementById('contact-form');
+// ============ ЗАДАНИЕ 3 ============
+const contactForm = document.getElementById('contact-form');
 const showFormButton = document.getElementById('show-contact-form');
 const formContainer = document.getElementById('contact-form-container');
 
 if (contactForm && showFormButton && formContainer) {
     showFormButton.addEventListener('click', function() {
-        if (formContainer.style.display === 'none') {
-            formContainer.style.display = 'block';
-        } else {
-            formContainer.style.display = 'none';
-        }
+        formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
     });
-    
-    const savedName = localStorage.getItem('censorshipUserName');
-    const savedEmail = localStorage.getItem('censorshipUserEmail');
-    const savedFeedback = localStorage.getItem('censorshipUserFeedback');
-    
-    if (savedName) {
-        const greeting = document.createElement('div');
-        greeting.innerHTML = `<strong>Добрый день, ${savedName}!</strong>`;
-        greeting.style.color = 'green';
-        greeting.style.marginBottom = '10px';
-        contactForm.parentNode.insertBefore(greeting, contactForm);
-    }
-    
-    if (savedEmail) {
-        const emailField = document.getElementById('user-email');
-        if (emailField) {
-            emailField.value = savedEmail;
+
+    async function loadSavedData() {
+        try {
+            const savedName = await localforage.getItem('censorshipUserName');
+            const savedEmail = await localforage.getItem('censorshipUserEmail');
+            const savedFeedback = await localforage.getItem('censorshipUserFeedback');
+            
+            if (savedName) {
+                const greeting = document.createElement('div');
+                greeting.innerHTML = `<strong>Добрый день, ${savedName}!</strong>`;
+                greeting.style.cssText = 'color: green; margin-bottom: 10px;';
+                contactForm.parentNode.insertBefore(greeting, contactForm);
+            }
+            
+            if (savedEmail) {
+                const emailField = document.getElementById('user-email');
+                if (emailField) emailField.value = savedEmail;
+            }
+            
+            if (savedFeedback) {
+                const feedbackField = document.getElementById('user-feedback');
+                if (feedbackField) feedbackField.value = savedFeedback;
+            }
+        } catch (error) {
+            console.error('Ошибка загрузки данных:', error);
         }
     }
     
-    if (savedFeedback) {
-        const feedbackField = document.getElementById('user-feedback');
-        if (feedbackField) {
-            feedbackField.value = savedFeedback;
-        }
-    }
+    loadSavedData();
     
-    contactForm.addEventListener('submit', function(event) {
+    contactForm.addEventListener('submit', async function(event) {
         event.preventDefault();
         
         const userName = document.getElementById('user-name').value;
         const userEmail = document.getElementById('user-email').value; 
         const userFeedback = document.getElementById('user-feedback').value;
         
-        localStorage.setItem('censorshipUserName', userName);
-        localStorage.setItem('censorshipUserEmail', userEmail);
-        localStorage.setItem('censorshipUserFeedback', userFeedback);
-        
-        contactForm.style.display = 'none';
-        const successMessage = document.getElementById('success-message');
-        successMessage.style.display = 'block';
-        
-        setTimeout(function() {
-            contactForm.style.display = 'block';
-            successMessage.style.display = 'none';
-            contactForm.reset();
-        }, 3000);
+        try {
+         
+            await localforage.setItem('censorshipUserName', userName);
+            await localforage.setItem('censorshipUserEmail', userEmail);
+            await localforage.setItem('censorshipUserFeedback', userFeedback);
+            
+            contactForm.style.display = 'none';
+            const successMessage = document.getElementById('success-message');
+            successMessage.style.display = 'block';
+            
+            setTimeout(function() {
+                contactForm.style.display = 'block';
+                successMessage.style.display = 'none';
+                contactForm.reset();
+            }, 3000);
+        } catch (error) {
+            console.error('Ошибка сохранения данных:', error);
+            alert('Ошибка сохранения отзыва. Попробуйте еще раз.');
+        }
     });
 }
     // ============ ЗАДАНИЕ 4 ============
@@ -296,4 +301,5 @@ if (contactForm && showFormButton && formContainer) {
             sidebarNav.classList.toggle('active');
         });
     }
+
 });
