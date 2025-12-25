@@ -615,7 +615,7 @@ td {
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #7ee8fa;
     color: white;
     text-decoration: none;
     border: none;
@@ -628,3 +628,4 @@ td {
 .button:hover {
     background-color: #0056b3;
 }
+
